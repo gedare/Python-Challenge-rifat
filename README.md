@@ -5,7 +5,7 @@ This is a programming challenge meant to assess basic to intermediate Python pro
 
 You must do this challenge by yourself. You may discuss the problem or solutions with others, but you may not share code with anyone. You may not use code downloaded from the Internet. You *must* identify any resources that you used to solve this challenge.
 
-You should first **fork** this repository to your own *private* repo. You are expected to work on your repo by making *git-commit* as you work. In the end, you should submit your entire set of all commits as a single **pull request**. In this way, the entire *history* of your programming efforts will be reflected in the commits you made, while the PR will merge all of these to provide a consolidated changeset that we can review.
+You should first **fork** this repository to your own *private* repo. You are expected to work on your repo by making *git-commit* as you work. In the end, you should submit your entire set of all commits as a single **pull request**. In this way, the entire *history* of your programming efforts will be reflected in the commits you made, while the PR will merge all of these to provide a consolidated changeset that we can review. Your commits should only add the requested files in the challenge. You should not include any binary files in any of your git-commits.
 
 The Challenge
 -------------
