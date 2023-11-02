@@ -1,4 +1,4 @@
-RTEMS-Python-Challenge
+Python-Challenge
 ======================
 
 This is a programming challenge meant to assess basic to intermediate Python programming skills. Read all instructions carefully.
@@ -7,7 +7,7 @@ You must do this challenge by yourself. You may discuss the problem or solutions
 
 You should first **fork** this repository to your own *private* repo. You are expected to work on your repo by making *git-commit* as you work. In the end, you should submit your entire set of all commits as a single **pull request**. In this way, the entire *history* of your programming efforts will be reflected in the commits you made, while the PR will merge all of these to provide a consolidated changeset that we can review. Your commits should only add the requested files in the challenge. You should not include any binary files in any of your git-commits.
 
-Your code should be consistent with the [RTEMS Python Devleopment Guidelines](https://docs.rtems.org/branches/master/eng/python-devel.html).
+Your code should be consistent with the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html).
 
 The Challenge
 -------------
