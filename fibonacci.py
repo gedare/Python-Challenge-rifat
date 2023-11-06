@@ -25,43 +25,32 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-
-import getopt
-import sys
-
-
-def usage():
-    print("\
-This program prints the n'th Fibonacci number.\n\
-Usage: fib.py -[hn:]\n\
-  -h --help           print this help\n\
-  -n --number=        the number of the Fibonacci number to print\n")
-
-
-def fibonacci(n):
-  return n if n < 2 else (fibonacci(n-1) + fibonacci(n-2))
+import argparse
+from FibCache import FibCache
+import time
 
 
 def main():
-  # default values
-  n = 10
+    "Parse the arguments and print fibonacci number"
+    parser = argparse.ArgumentParser(description="Calculate Fibonacci numbers.")
+    parser.add_argument(
+        "-n",
+        "--number",
+        type=int,
+        help="The n-th Fibonacci number to calculate",
+        required=True,
+    )
+    args = parser.parse_args()
 
-  try:
-    opts, args = getopt.getopt(sys.argv[1:], "hn:", ["help=", "number="])
-  except getopt.GetoptError as err:
-    print(err)
-    usage()
-    sys.exit(2)
-  for opt, arg in opts:
-    if opt in ("-h", "--help"):
-      usage()
-      sys.exit()
-    elif opt in ("-n", "--number"):
-      n = int(arg)
+    fib_cache = FibCache()
+    start_time = time.time()
+    result = fib_cache.fibonacci(args.number)
+    end_time = time.time()
 
-  print(fibonacci(n))
+    print(f"The {args.number}th Fibonacci number is {result}")
+    print(f"Found by making {fib_cache.call_count} calls")
+    print(f"Time taken: {end_time - start_time} seconds")
 
 
-if __name__ == '__main__':
-  main()
-
+if __name__ == "__main__":
+    main()
