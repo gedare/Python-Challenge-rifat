@@ -1,18 +1,13 @@
-class Singleton(type):
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
+import sys
 
-class Fib(metaclass=Singleton):
+class Fib:
     def __init__(self):
-        self.store_val = {0: 0, 1: 1}
+        self.store_val = {0: 0, 1: 1} 
+        # sys.setrecursionlimit(5000) # set the limit according to the size of n to avoid RecursionError
 
     def fibonacci(self, n):
         if n not in self.store_val:
-            x, y = 0, 1
-            for _ in range(2, n + 1):
-                x, y = y, x + y
-            self.store_val[n] = y
+            self.store_val[n] = self.fibonacci(n - 1) + self.fibonacci(n - 2)
         return self.store_val[n]
+
+

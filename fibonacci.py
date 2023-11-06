@@ -26,26 +26,26 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import argparse
-from FibCount import FibCount
+from FibCache import FibCache
 import time
 
 def main():
-    parser = argparse.ArgumentParser(description="Calculate the nth Fibonacci number.")
-    parser.add_argument('-n', '--number', type=int, default=10,
-                        help='The number of the Fibonacci number to calculate.')
-
+    "Parse the arguments and print fibonacci number"
+    parser = argparse.ArgumentParser(description="Calculate Fibonacci numbers.")
+    parser.add_argument('-n', '--number', type=int, help='The n-th Fibonacci number to calculate', required=True)
     args = parser.parse_args()
 
-    # Instantiate FibCount, which also records the number of function calls
-    fib_counter = FibCount()
-
+    fib_cache = FibCache()
     start_time = time.time()
-    result = fib_counter.fibonacci(args.number)
+    result = fib_cache.fibonacci(args.number)
     end_time = time.time()
 
-    print(f"The {args.number}th Fibonacci number is: {result}")
-    print(f"Found by making {fib_counter.get_call_count()} calls")
-    print(f"Time taken: {end_time - start_time:.8f} seconds")
+    print(f"The {args.number}th Fibonacci number is {result}")
+    print(f"Found by making {fib_cache.call_count} calls")
+    print(f"Time taken: {end_time - start_time} seconds")
 
 if __name__ == '__main__':
     main()
+
+
+

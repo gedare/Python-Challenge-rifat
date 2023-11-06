@@ -6,8 +6,5 @@ class FibCount(Fib):
         self.call_count = 0
 
     def fibonacci(self, n):
-        self.call_count += 1  # count increment
+        self.call_count += 1
         return super().fibonacci(n)
-
-    def get_call_count(self):
-        return self.call_count
