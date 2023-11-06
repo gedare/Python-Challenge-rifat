@@ -29,10 +29,17 @@ import argparse
 from FibCache import FibCache
 import time
 
+
 def main():
     "Parse the arguments and print fibonacci number"
     parser = argparse.ArgumentParser(description="Calculate Fibonacci numbers.")
-    parser.add_argument('-n', '--number', type=int, help='The n-th Fibonacci number to calculate', required=True)
+    parser.add_argument(
+        "-n",
+        "--number",
+        type=int,
+        help="The n-th Fibonacci number to calculate",
+        required=True,
+    )
     args = parser.parse_args()
 
     fib_cache = FibCache()
@@ -44,8 +51,6 @@ def main():
     print(f"Found by making {fib_cache.call_count} calls")
     print(f"Time taken: {end_time - start_time} seconds")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
-
-
-
